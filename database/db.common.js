@@ -1,6 +1,4 @@
 
-// ========================= MONGO DB ==================================
-
 const config= require('../config/database');
 //loading mongoose1 module
 const mongoose = require('mongoose');

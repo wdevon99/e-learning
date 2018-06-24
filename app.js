@@ -9,16 +9,11 @@ app.use(cors());
 
 // ========================= USER AUTHENTICATION ================================
 
-const User= require("./models/user");
-const Student = require("./models/users/student");
-const Teacher = require("./models/users/teacher");
-
 const passport=require('passport');
 app.use(passport.initialize());
 app.use(passport.session());
-require("./config/passport")(passport,User);
-//require("./config/passport")(passport,Student);
-// require("./config/passport")(passport,Teacher);
+require("./config/passport")(passport);
+
 
 // ========================= BODY PARSER ==================================
 //loading the body parser module
@@ -41,28 +36,28 @@ const path= require('path');
 app.use(express.static(path.join(__dirname,"public")));
 
 // ======================= ROUTE HANDLING ===========================
-//setting the user routes
-const userRoute=  require('./routes/users');
-app.use('/user',userRoute);
+
+//setting the person routes
+const personRoute =  require('./api/routes/person.route');
+app.use('/person', personRoute);
 
 //setting the student routes
-const studentRoute =  require('./routes/student');
+const studentRoute =  require('./api/routes/student.route');
 app.use('/student', studentRoute);
 
 //setting the teacher routes
-const teacherRoute =  require('./routes/teacher');
+const teacherRoute =  require('./api/routes/teacher.route');
 app.use('/teacher', teacherRoute);
 
 //setting the course routes
-const courseRoute =  require('./routes/course');
+const courseRoute =  require('./api/routes/course.route');
 app.use('/course', courseRoute);
 
 //setting the group routes
-const groupRoute =  require('./routes/group');
+const groupRoute =  require('./api/routes/group.route');
 app.use('/group', groupRoute);
 
-
-//defining a route for TESTING
+//if not index.html file is available in the public folder 
 app.get('/',(req,res)=>{
     res.send("NOTE : This will be replaced by the static html in the public folder");
 });

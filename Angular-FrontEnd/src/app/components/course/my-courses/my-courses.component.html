@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <h3 class="card-header">My Courses</h3>
+    <div class="card-body">
+
+      <div *ngIf="this.courses">
+        <div *ngFor="let course of courses; let i = index">
+
+          <app-course-tiny-preview [course]="course"></app-course-tiny-preview>
+          
+        </div>
+      </div>
+
+      <div>
+      </div>
+
+    </div>
+  </div>

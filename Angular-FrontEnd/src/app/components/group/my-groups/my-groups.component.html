@@ -1,0 +1,18 @@
+<div class="card mb-3">
+  <h3 class="card-header">My Groups</h3>
+  <div class="card-body">
+   
+      <div *ngIf="this.groups">
+          <div *ngFor="let group of groups; let i = index">
+            <hr *ngIf="i!==0">
+            <h5>{{group.groupName}}</h5>
+            <button type="button" class="btn btn-secondary" [routerLink]="['/teacherdashboard/editgroup/', group._id ]" >edit</button>
+          </div>
+      </div>
+
+      <br>
+      <button type="button" class="btn btn-primary" (click)="this.createGroup()">+ Create New Group</button>
+
+  </div>
+</div>
+

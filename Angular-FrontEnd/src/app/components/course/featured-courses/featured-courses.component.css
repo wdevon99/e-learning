@@ -1,0 +1,11 @@
+/* containers */
+.container-fluid {
+    background-color: rgb(243, 243, 243);
+    padding: 30px;
+}
+
+/* headings */
+.mainHeading{
+    font-weight: 200;
+
+}

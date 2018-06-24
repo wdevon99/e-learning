@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body text-center">
+    <h2 class="card-title">{{course.title}}</h2>
+    
+    <h5 class="card-title">Level : begginer</h5>
+
+    <!-- <img src="{{courseImageUrl}}" alt="" srcset="" width="100%"> -->
+
+    <br>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <br>
+    
+    <h6 class="card-subtitle mb-2 text-muted">price:</h6>
+    <h4 class="card-title">${{course.price}}</h4>
+    <hr>
+    <button [routerLink]="['/courseoverview', course._id ]" type="button" class="btn btn-primary btn-sm-custom">View</button>
+  </div>
+</div> 

@@ -1,0 +1,21 @@
+<h3>
+  Student List
+</h3>
+
+<div *ngIf="this.students && this.group">
+  <ul class="list-group"  >
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let student of students; let i = index">
+        {{student.firstName +" "+ student.lastName + " (" + student.email + ")" }}
+      </li>
+  </ul>
+
+  <br>
+
+  <form class="form-group"  (submit)="onSubmitAddStudent()" ngNativeValidate>
+      <label >Add Student</label>
+      <input type="email" class="form-control"  placeholder="Enter email of student" [(ngModel)]="studentEmail" name="studentEmail" required="true">
+      <br>
+      <button type="submit" class="btn btn-primary">Add Student</button>
+  </form>
+</div>

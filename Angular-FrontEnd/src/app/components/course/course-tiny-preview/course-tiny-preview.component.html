@@ -1,0 +1,18 @@
+
+
+<div>
+  <h3 style="font-weight:500">{{course.title}}</h3>
+  
+  <!-- will only be shown for students -->
+  <span  *ngIf="this.authService.getUserType()==='Student'" >
+    <h4> {{0}}% complete</h4> 
+    <button [routerLink]="['/activities', course._id ]" type="button" class="btn btn-success btn-sm">Continue</button>
+  </span>
+
+  <button type="button" class="btn btn-outline-success btn-sm" [routerLink]="['/courseoverview', course._id ]">Overview</button>
+  
+  <br>
+  <br>
+  <hr>
+
+</div>

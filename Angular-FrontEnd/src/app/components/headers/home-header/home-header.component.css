@@ -1,0 +1,25 @@
+/* row */
+.row{
+    vertical-align: middle;
+}
+
+/* headings */
+.headerMainTextLarge{
+    margin: 60px 0px 10px 0px;
+    font-weight: 100;
+    font-size: 6em;
+    color: #4682ec;
+}
+
+.headerMainTextSmall{
+    font-weight: 500;
+    font-size: 3em;
+    color: #4682ec;
+}
+
+.img-fluid{
+    float: right;
+    max-width: 340px;;
+}
+
+

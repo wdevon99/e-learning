@@ -1,25 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#"> <b>Igniter Space</b> E-Learning</a>
+    <img  routerLink = "/" class="img-fluid smallLogo" src="https://static.wixstatic.com/media/298f7f_b684b7c219004fb3a85ba0a82b538599~mv2_d_4729_2231_s_2.png/v1/crop/x_0,y_15,w_4729,h_2201/fill/w_554,h_256,al_c,usm_0.66_1.00_0.01/298f7f_b684b7c219004fb3a85ba0a82b538599~mv2_d_4729_2231_s_2.png" alt="Logo">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active" *ngIf="authService.loggedIn()">
-          <a class="nav-link" [routerLink]="['/profile']" >Profile <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" *ngIf="!authService.loggedIn()">
-            <a class="nav-link" [routerLink]="['/login']" >Login</a>
-        </li>
-        <li class="nav-item" *ngIf="!authService.loggedIn()">
-            <a class="nav-link" [routerLink]="['/register']" >Register</a>
-        </li>
+
+        <!-- After login -->
         <li class="nav-item" *ngIf="authService.loggedIn()">
-            <a class="nav-link" (click)="logoutUser()">Logout</a>
+            <a 
+              *ngIf="this.authService.getUserType()==='Teacher'" 
+              class="nav-link" 
+              routerLink = "/teacherdashboard"
+            > 
+              Dashboard
+            </a>
+            <a 
+              *ngIf="this.authService.getUserType()==='Student'" 
+              class="nav-link" 
+              routerLink = "/studentdashboard"
+            > 
+              Dashboard
+            </a>
+        </li>
+
+        <!-- common -->
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/courses']" >All Courses</a>
         </li>
       </ul>
+
+      <!-- before Login -->
+      <button *ngIf="!authService.loggedIn()" class="btn btn-primary my-2 my-sm-0" [routerLink]="['/login']" >
+          Login
+      </button>
+      <button *ngIf="!authService.loggedIn()" class="btn btn-secondary my-2 my-sm-0" [routerLink]="['/register']" >
+          Register
+      </button>
+
+      <!-- After Login -->
+  
+      <button *ngIf="authService.loggedIn()" class="btn btn-outline-success" [routerLink]="['/profile']" >
+        Profile
+      </button>
+      <button *ngIf="authService.loggedIn()" class="btn btn-outline-danger my-2 my-sm-0" (click)="logoutUser()" >
+        Logout
+      </button>
+      
     </div>
   </div>
 </nav>
