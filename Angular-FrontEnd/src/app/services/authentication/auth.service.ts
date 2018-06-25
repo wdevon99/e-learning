@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable , } from '@angular/core';
 import { Http ,Headers } from '@angular/http';
 import 'rxjs/add/operator/map'
 import { tokenNotExpired } from 'angular2-jwt';
+import { Subject , Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -12,6 +13,9 @@ export class AuthService {
   private token:any;
   //stores the type of user (Student or teacher)
   private userType:String=null;
+
+  //to track local storage chages
+  private storageSub= new Subject<boolean>();
   
   constructor(private http:Http) { }
 
@@ -63,6 +67,8 @@ export class AuthService {
     //setting the tokens
     this.token=token;
     this.user=userData;
+    //to track changes to local storage
+    this.storageSub.next(true);
   }
 
   /** 
@@ -98,6 +104,8 @@ export class AuthService {
     this.user=null;
     //clearing local storage data
     localStorage.clear();
+    //to track changes to local storage
+    this.storageSub.next(true);
   }
 
   /**
@@ -129,4 +137,21 @@ export class AuthService {
       return null;
     }
   }
+  getCurrentUserObect():String{
+    if(localStorage.getItem('userData')!==null){
+      //reading the saved object from the local storage
+      const userObject = JSON.parse(localStorage.getItem('userData'));
+      return userObject;
+    }else{
+      return null;
+    }
+  }
+
+  /**
+   * watchStorage to track changes to local storage
+   */
+  watchStorage(): Observable<any> {
+    return this.storageSub.asObservable();
+  }
+
 }

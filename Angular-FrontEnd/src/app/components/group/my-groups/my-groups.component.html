@@ -1,18 +1,14 @@
-<div class="card mb-3">
-  <h3 class="card-header">My Groups</h3>
+<div class="card text-center">
   <div class="card-body">
-   
-      <div *ngIf="this.groups">
-          <div *ngFor="let group of groups; let i = index">
-            <hr *ngIf="i!==0">
-            <h5>{{group.groupName}}</h5>
-            <button type="button" class="btn btn-secondary" [routerLink]="['/teacherdashboard/editgroup/', group._id ]" >edit</button>
-          </div>
-      </div>
+    <h1 class="mainHeading"><i class="fa fa-users"></i> My Groups</h1>
+    <hr>
+    <button *ngIf="this.authService.getUserType()==='Teacher'"  type="button" class="btn btn-primary" (click)="this.createGroup()"><i class="fa fa-plus-circle"></i> Create New Group</button>
 
-      <br>
-      <button type="button" class="btn btn-primary" (click)="this.createGroup()">+ Create New Group</button>
+    <div *ngIf="this.groups">
+        <div *ngFor="let group of groups; let i = index">
+          <app-group-small-preview [group]=group> </app-group-small-preview>
+        </div>
+    </div>
 
   </div>
 </div>
-

@@ -10,10 +10,26 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router ,private authService:AuthService,private flashMessagesService:FlashMessagesService) { }
+  //sotre a little info about th user
+  private user;
+
+  constructor(private router:Router ,private authService:AuthService,private flashMessagesService:FlashMessagesService) {}
 
   ngOnInit() {
+    //subscribing to watch chages to the local storage
+    this.authService.watchStorage().subscribe(res=>{
+      this.loadUserData();
+    });
+  }
 
+  /** 
+   * loadUserData() method loads the user object
+  */
+  loadUserData(){
+    if(this.authService.loggedIn()){
+      this.user=this.authService.getCurrentUserObect();
+      console.log(this.user)
+    }
   }
   
   /** 

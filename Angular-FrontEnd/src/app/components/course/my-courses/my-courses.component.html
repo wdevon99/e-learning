@@ -1,17 +1,24 @@
 <div class="card text-center">
     <div class="card-body">
-      <h1 class="mainHeading">My Courses</h1>
+      <h1 class="mainHeading"> My Courses</h1>
       <hr>
 
       <div *ngIf="this.courses">
         <div *ngFor="let course of courses; let i = index">
           <app-course-tiny-preview [course]="course"></app-course-tiny-preview>
         </div>
-      </div>
 
-      <div *ngIf="this.courses.length===0">
-        <h3 class="noCoursesMessage"> you have no courses assigned yet :(</h3>
-      </div>
+        <div *ngIf="this.courses.length===0">
+          <div *ngIf="this.authService.getUserType()==='Teacher'" >
+              <h3 class="noCoursesMessage" > Purchase a course to get started ! </h3>
+              <hr>
+              <button [routerLink]="['/courses']" type="button" class="btn btn-primary">View All Courses</button>
+          </div>
+   
+
+          <h3 *ngIf="this.authService.getUserType()==='Student'" class="noCoursesMessage"> You have no courses assigned yet ! </h3>
+        </div>
+    </div>
 
       <div>
       </div>

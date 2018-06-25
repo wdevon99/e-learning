@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from "@angular/router"
 import { AuthService } from '../../../services/authentication/auth.service';
 import { TeacherService } from '../../../services/teacher/teacher.service';
 import { StudentService } from '../../../services/student/student.service';
@@ -16,7 +17,7 @@ export class MyCoursesComponent implements OnInit {
   //to store th type of user
   private userType;
 
-  constructor(private authService:AuthService ,private teacherService:TeacherService , private studentService:StudentService ) { }
+  constructor(private router:Router , private authService:AuthService ,private teacherService:TeacherService , private studentService:StudentService ) { }
 
   ngOnInit() {
     this.userType=this.authService.getUserType();

@@ -76,6 +76,24 @@ module.exports.assignCoursesInGroupToStudent = ( studentId , groupId )=>{
 
 }
 
+//getAllGroups method will get all the groups of a specific student
+module.exports.getAllGroups = (studentId , callback )=>{
+    //getting the student object
+    Student.findById(studentId , (err , student )=>{
+        if (err) {
+            throw err;
+        }
+        if(student){
+            //getting the array of course ids from the student schema object
+            const groupsIdArray = student.groups ; 
+            //query to select all objects with the ids
+            const query = { "_id": { "$in": groupsIdArray }};
+            Group.find(query , callback );
+        }
+    });
+}
+
+
 
 //addCompletedActivityId()
 // module.exports.addCompletedActivityId() = ( activityId , studentId)=>{

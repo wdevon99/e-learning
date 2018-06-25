@@ -14,6 +14,15 @@ const controller=require("../controllers/student.controller");
 */
 router.get('/getallcourses', controller.getAllCoursesTrigger);
 
+
+/**
+ * 
+ * GET : /student/getallgroups
+ * 
+*/
+router.get('/getallgroups', controller.getAllGroupsTrigger);
+
+
 /**
  * 
  * POST : /student/completeactivity

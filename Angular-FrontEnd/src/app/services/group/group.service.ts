@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http ,Headers } from '@angular/http';
+import { AuthService } from '../../services/authentication/auth.service';
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class GroupService {
 
-  constructor(private http:Http) { }
+  constructor(private http:Http ,private authService :AuthService) { }
 
    /**
    * createGroup() will create a group and assign it to a specific teacher
@@ -29,12 +30,19 @@ export class GroupService {
   /**
    * getAllGroups() will get all the groups of the specific teacher
    */
-  getAllGroups(teacherId){
-    let getUrl:string = "http://localhost:3000/teacher/getallgroups";
+  getAllGroups(personId){
+    let getUrl:string 
+    if(this.authService.getUserType() === 'Student'){
+      getUrl = "http://localhost:3000/student/getallgroups/?studentId="+personId;
+    }
+    if(this.authService.getUserType() === 'Teacher'){
+      getUrl = "http://localhost:3000/teacher/getallgroups/?teacherId="+personId;
+    }
+
     const headers= new Headers();
     headers.append('content-Type' ,'application/json');
     //appending the teacher id param to the get Url
-    getUrl+="/?teacherId="+teacherId;
+  
     //this will return the response of the get request in json format
     return this.http.get(getUrl, { headers : headers})
     .map(res=>res.json());;

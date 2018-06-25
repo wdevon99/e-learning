@@ -1,0 +1,33 @@
+/* card */
+.card{
+    margin: 20px 0px 20px 0px;
+}
+
+/* text */
+.card-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+/* conent */
+.row{
+    text-align: left !important;
+}
+
+/* icons */
+.fa-edit:hover{
+    color: #4682ec;
+    opacity: 1;
+}
+.fa-trash-alt:hover{
+    color: rgb(218, 3, 3);
+    opacity: 1;
+}
+
+i{
+   color: rgb(211, 211, 211);
+   opacity: 0.7;
+}
+.card-body{
+    padding: 19px  10px  10px  30px;
+}

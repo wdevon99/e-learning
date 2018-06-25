@@ -6,3 +6,10 @@
 .btn{
     margin: 0px  5px  0px  0px;
 }
+.hiMessage{
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 5px 10px 0px  0px;
+    padding: 10px;
+    border-right: 1px solid rgb(226, 226, 226);
+}

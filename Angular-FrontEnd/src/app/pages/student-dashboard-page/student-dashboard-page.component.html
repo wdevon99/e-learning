@@ -5,11 +5,19 @@
     <hr>
     
     <div class="row">
-        <div class="col-md-4">
-            <app-profile></app-profile>
-        </div>
+   
         <div class="col-md-6">
-            <app-my-courses></app-my-courses>
+            <app-my-courses class="dashboardComponent"></app-my-courses>
         </div>
+        <div class="col-md-4">
+            <div class="dashboardComponent">
+                <app-profile></app-profile>
+            </div>
+            <div class="dashboardComponent">
+                <app-my-groups ></app-my-groups>
+            </div>
+                    
+        </div>
+        
     </div>
 </div>

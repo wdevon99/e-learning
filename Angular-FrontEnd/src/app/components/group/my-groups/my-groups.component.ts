@@ -21,7 +21,6 @@ export class MyGroupsComponent implements OnInit {
     this.loadAllGroups();
   }
 
-
   /**
    * loadAllGroups() will get the array of groups which the teacher owns and set the groups array variable 
    */
@@ -29,9 +28,11 @@ export class MyGroupsComponent implements OnInit {
     this.groupService.getAllGroups(this.authService.getCurrentUserId()).subscribe(res=>{
       this.groups=res.groups;
     });
-    
   }
 
+  /**
+   * createGroup() will creae a new group
+   */
   createGroup(){
     const groupName = prompt("Group Name?");
 
