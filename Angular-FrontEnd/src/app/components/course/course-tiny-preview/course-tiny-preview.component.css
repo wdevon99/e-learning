@@ -1,0 +1,29 @@
+/* images */
+.couseImageMini{
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+    position: relative; 
+}
+.card-body{
+    padding: 0rem !important;
+}
+.card{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.textCol{
+    padding: 1rem;
+}
+
+h3{
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 1.5rem;
+}
+ h3.percentage{
+    font-weight: 200;
+    font-size: 1rem;
+ }
+
+ 

@@ -1,20 +1,22 @@
-<h3>Edit group</h3>
-<hr>
-
-<div *ngIf="this.group">
-    <h1> <b> Group Name : </b>{{this.group.groupName}}</h1>
-
-    <br>
-
-    <div class="row">
-        <div class="col-md-6">
-            <!-- the list of students component -->
-            <app-group-student-list [group]="this.group"></app-group-student-list>
-        </div>
-
-        <div class="col-md-6">
-            <!-- the list of courses component -->
-            <app-group-course-list [group]="this.group" ></app-group-course-list>
+<div class="container">
+    <h3>Edit group</h3>
+    <hr>
+    
+    <div *ngIf="this.group">
+        <h1> <b> Group Name : </b>{{this.group.groupName}}</h1>
+    
+        <br>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <!-- the list of students component -->
+                <app-group-student-list [group]="this.group"></app-group-student-list>
+            </div>
+    
+            <div class="col-md-6">
+                <!-- the list of courses component -->
+                <app-group-course-list [group]="this.group" ></app-group-course-list>
+            </div>
         </div>
     </div>
-</div>
+</div> 

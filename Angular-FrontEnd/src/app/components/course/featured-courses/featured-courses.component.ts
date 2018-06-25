@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from "../../../services/course/course.service";
 
 @Component({
   selector: 'app-featured-courses',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedCoursesComponent implements OnInit {
 
-  constructor() { }
+  private courses:any;
+
+  constructor(private courseService:CourseService) { }
 
   ngOnInit() {
+    this.loadAllCourses();
+
   }
 
+  loadAllCourses(){
+    this.courseService.getAllCourses().subscribe((res)=>{
+      this.courses=res;
+      console.log(res);
+    });
+  }
 }

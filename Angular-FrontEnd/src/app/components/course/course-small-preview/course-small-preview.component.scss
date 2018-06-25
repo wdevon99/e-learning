@@ -1,0 +1,51 @@
+/* text */
+.card-text{
+    font-weight: 200;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+.card-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.levelHeading{
+    font-weight: 200;
+    font-size: 1rem;
+}
+.priceHeading{
+    font-weight: 200;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.content{
+    padding: 20px;
+}
+
+/* button */
+.btn-sm-custom{
+    width: 6em;
+}
+
+/* card */
+.card{
+    margin: 20px;
+}
+.card-body{
+    padding: 0rem !important;
+}
+
+// images
+.couseImageMini{
+    width: 100%;
+    object-fit: cover;
+    height: 100px;
+    position: relative; 
+}
+
+.badge{
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    margin: 10px;
+}

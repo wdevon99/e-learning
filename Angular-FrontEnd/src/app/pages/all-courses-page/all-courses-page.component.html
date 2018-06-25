@@ -1,13 +1,17 @@
-<h3>All Courses</h3>
-<hr>
-
-<div *ngIf="courses" >
-  <div class="row" >
-      <div class="col-md-4" *ngFor="let course of courses; let i = index" >
-        <app-course-small-preview [course]="course"> </app-course-small-preview>
-      </div>
+<div class="container">
+  <h1 class="mainHeading">All Courses</h1>
+  <hr>
+  
+  <div *ngIf="courses" >
+    <div class="row" >
+        <div class="col-md-4" *ngFor="let course of courses; let i = index" >
+          <app-course-small-preview [course]="course"> </app-course-small-preview>
+        </div>
+    </div>
   </div>
+  
 </div>
+
 
 
 

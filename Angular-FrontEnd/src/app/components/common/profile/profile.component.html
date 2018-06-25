@@ -1,12 +1,15 @@
-<div *ngIf="user">
-  <h1>PROFILE</h1>
-  <hr>
-  <p>Username:</p>
-  <h3>{{user.firstName}}</h3>
-  <br>
-  <p>Name</p>
-  <h3>{{user.lastName}}</h3>
-  <br>
-  <p>Email</p>
-  <h3>{{user.email}}</h3>
+
+<div class="card">
+  <div class="card-body">
+      <div *ngIf="user" class="container text-center">
+        <h1 class="mainHeading">Profile</h1>
+        <hr>
+        <img class="prfoliePic" src="../../../../assets/img/profilepic.png" alt="" srcset="">
+        <h3>{{user.firstName}} {{user.lastName}}</h3>
+        <h3 class="email">({{user.email}})</h3>
+
+        <hr>
+        <button type="button" class="btn btn-success btn-lg btn-block">Edit</button>
+      </div>
+  </div>
 </div>

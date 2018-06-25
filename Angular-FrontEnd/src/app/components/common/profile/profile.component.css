@@ -1,0 +1,19 @@
+.prfoliePic{
+    width:40%;
+
+    padding: 10px 0px 20px 0px;
+}
+.mainHeading{
+    font-weight: 200;
+    font-size: 2.5rem;
+}
+
+h3{
+    font-weight: 300;
+    font-size: 2.0rem;
+}
+
+h3.email{
+    font-weight: 200;
+    font-size: 1.5rem;
+}

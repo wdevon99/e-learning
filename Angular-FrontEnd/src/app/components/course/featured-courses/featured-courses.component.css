@@ -7,5 +7,6 @@
 /* headings */
 .mainHeading{
     font-weight: 200;
-
+    padding: 20px;
+    font-size: 3.2vmax;
 }
