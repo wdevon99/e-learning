@@ -1,3 +1,16 @@
 .card{
     margin: 20px 0px 20px 0px;
 }
+
+.mainHeading{
+    margin: 20px 0px 40px 0px;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    color: #000000;
+}
+
+.alignCenter{
+    margin: 40px auto auto auto;
+    width: 130px;
+}

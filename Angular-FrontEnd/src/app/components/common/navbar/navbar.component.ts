@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router ,private authService:AuthService,private flashMessagesService:FlashMessagesService) {}
 
   ngOnInit() {
+    this.loadUserData();
     //subscribing to watch chages to the local storage
     this.authService.watchStorage().subscribe(res=>{
       this.loadUserData();
@@ -28,7 +29,6 @@ export class NavbarComponent implements OnInit {
   loadUserData(){
     if(this.authService.loggedIn()){
       this.user=this.authService.getCurrentUserObect();
-      console.log(this.user)
     }
   }
   

@@ -7,7 +7,6 @@ const bcrypt = require('bcryptjs');
 const Course = require('./course.model');
 
 
-
 const personOptions = {
     "discriminatorKey": "persontype", // our discriminator key, could be anything
     "collection": "persons" // the name of our collection

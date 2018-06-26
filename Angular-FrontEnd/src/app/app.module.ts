@@ -18,9 +18,15 @@ import { GroupCourseListComponent } from '../app/components/teacher/group-course
 import { MyGroupsComponent } from '../app/components/group/my-groups/my-groups.component';
 import { GroupSmallPreviewComponent } from '../app/components/group/group-small-preview/group-small-preview.component';
 import { FeaturedCoursesComponent } from '../app/components/course/featured-courses/featured-courses.component';
+import { ActivityIntroductionComponent } from '../app/components/course/activity/activity-introduction/activity-introduction.component';
+import { ActivityGoalsComponent } from '../app/components/course/activity/activity-goals/activity-goals.component';
+import { ActivityMeterialRequiredComponent } from '../app/components/course/activity/activity-meterial-required/activity-meterial-required.component';
+import { ActivityBuildingGoalsComponent } from '../app/components/course/activity/activity-building-goals/activity-building-goals.component';
+import { ActivityEndComponent } from '../app/components/course/activity/activity-end/activity-end.component';
 
 //header components
 import { HomeHeaderComponent } from '../app/components/headers/home-header/home-header.component';
+import { AllCoursesHeaderComponent } from '../app/components/headers/all-courses-header/all-courses-header.component';
 
 
 //Page Components
@@ -92,7 +98,13 @@ const applicationRoutes:Routes =[
     ActivitySmallPreviewComponent,
     DoActivityPageComponent,
     HomeHeaderComponent,
-    FeaturedCoursesComponent
+    FeaturedCoursesComponent,
+    AllCoursesHeaderComponent,
+    ActivityIntroductionComponent,
+    ActivityGoalsComponent,
+    ActivityMeterialRequiredComponent,
+    ActivityBuildingGoalsComponent,
+    ActivityEndComponent
   ],
   imports: [
     BrowserModule,

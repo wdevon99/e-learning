@@ -14,7 +14,6 @@
               <hr>
               <button [routerLink]="['/courses']" type="button" class="btn btn-primary">View All Courses</button>
           </div>
-   
 
           <h3 *ngIf="this.authService.getUserType()==='Student'" class="noCoursesMessage"> You have no courses assigned yet ! </h3>
         </div>

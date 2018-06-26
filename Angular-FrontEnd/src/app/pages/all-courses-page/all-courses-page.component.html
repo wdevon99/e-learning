@@ -1,7 +1,6 @@
 <div class="container">
-  <h1 class="mainHeading">All Courses</h1>
-  <hr>
-  
+  <app-all-courses-header></app-all-courses-header>
+
   <div *ngIf="courses" >
     <div class="row" >
         <div class="col-md-4" *ngFor="let course of courses; let i = index" >
