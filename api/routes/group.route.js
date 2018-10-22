@@ -1,9 +1,12 @@
 //loading express module
 const express= require('express');
+
 //initializing express Router to handdle the routes
 const router= express.Router();
-//importing the course controller
+
+//importing the course controller - for group
 const controller = require('../controllers/group.controller');
+
 
 /**
  * 
