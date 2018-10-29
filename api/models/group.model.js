@@ -56,6 +56,7 @@ module.exports.addStudent = ( studentId , groupId , callback ) =>{
         if(err){
             throw err;
         }
+        //if grou is found
         if(group){
             //this method will automatically asign all the courses in the group to the newly added student
             Student.assignCoursesInGroupToStudent(studentId,groupId);
